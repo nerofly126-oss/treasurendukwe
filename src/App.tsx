@@ -63,44 +63,6 @@ function App() {
           </div>
         </div>
       </section>
-
-      <section className="body" id="gallery">
-        <div className="body-header">
-          <p className="eyebrow">Exhibit archive</p>
-          <h2>Exhibit-led storytelling across Nigeria and beyond.</h2>
-          <p>
-            Each collection documents a public moment — gallery features, live
-            installations, and collaborative showcases.
-          </p>
-        </div>
-
-        <div className="body-grid">
-          <article>
-            <div className="label-tag">LIVE</div>
-            <h3>Exhibit highlights</h3>
-            <p>
-              Recent showcases, curatorial notes, and the stories behind each
-              exhibition.
-            </p>
-          </article>
-          <article>
-            <div className="label-tag">SERIES</div>
-            <h3>Studio series</h3>
-            <p>
-              Bodies of work developed between exhibits, capturing the evolving
-              themes in her practice.
-            </p>
-          </article>
-          <article>
-            <div className="label-tag">COLLAB</div>
-            <h3>Collaborations</h3>
-            <p>
-              Partnerships with galleries, fashion stylists, and cultural
-              platforms.
-            </p>
-          </article>
-        </div>
-      </section>
     </main>
   )
 }
