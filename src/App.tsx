@@ -648,7 +648,7 @@ function App() {
           </p>
 
           <div className="featured-stage miniature-stage">
-            {hasMiniatureWorks ? (
+            {currentMiniatureWork ? (
               <>
                 <button
                   type="button"
