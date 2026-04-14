@@ -5,13 +5,24 @@
   gap: 120px;
 }
 
+.zigzag-divider {
+  height: 96px;
+  width: 100%;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  background-image: url('./assets/afro-divider.jpeg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .hero {
   position: relative;
   min-height: min(88vh, 780px);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  padding: clamp(48px, 8vw, 96px) clamp(24px, 7vw, 96px);
+  padding: clamp(48px, 8vw, 96px) clamp(24px, 7vw, 96px) 0;
   background: var(--background);
 }
 
@@ -161,6 +172,75 @@
   gap: 40px;
 }
 
+.about {
+  margin-top: -1px;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: start;
+  position: relative;
+  overflow: hidden;
+  background-image: url('./assets/about-bg.png');
+  background-size: cover;
+  background-position: center;
+  padding: clamp(36px, 6vw, 72px);
+}
+
+.about::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 10, 12, 0.92) 0%,
+    rgba(8, 10, 12, 0.82) 45%,
+    rgba(8, 10, 12, 0.6) 100%
+  );
+  z-index: 0;
+}
+
+.about-text,
+.about-notes {
+  position: relative;
+  z-index: 1;
+}
+
+.about-text {
+  display: grid;
+  gap: 14px;
+  max-width: 60ch;
+}
+
+.about-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+  color: var(--foreground);
+  margin: 0;
+}
+
+.about-notes {
+  display: grid;
+  gap: 18px;
+}
+
+.about-notes div {
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--secondary) 75%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.about-notes h3 {
+  font-family: var(--font-display);
+  color: var(--accent);
+  margin: 0 0 6px;
+}
+
+.about-notes p {
+  margin: 0;
+  color: color-mix(in srgb, var(--foreground) 70%, transparent);
+}
+
 .body-header {
   max-width: 680px;
   display: grid;
@@ -224,7 +304,7 @@
 
 @media (max-width: 900px) {
   .hero {
-    min-height: 100vh;
+    min-height: auto;
     padding: 32px 20px 48px;
   }
 
@@ -237,56 +317,64 @@
   .body-grid {
     grid-template-columns: 1fr;
   }
+
+  .about {
+    grid-template-columns: 1fr;
+    margin-top: -24px;
+  }
 }
 
 @media (max-width: 600px) {
   .page {
-    gap: 80px;
+    gap: 64px;
   }
 
   .hero {
-    min-height: 100vh;
-    padding-bottom: 40px;
-    background-image: url('./assets/hero-banner.jpg');
-    background-size: cover;
-    background-position: center 70%;
+    min-height: 92vh;
+    padding: 22px 16px 32px;
   }
 
   .hero-topline {
     transform: scaleX(1);
-    letter-spacing: 0.32em;
-    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    font-size: 0.58rem;
   }
 
   .hero-topline span::after {
-    width: 18px;
-  }
-
-  .hero-bg {
-    display: none;
+    width: 14px;
   }
 
   .hero-title {
     transform: rotate(-1deg);
-    font-size: clamp(3.2rem, 16vw, 6rem);
+    font-size: clamp(3.3rem, 17vw, 6.2rem);
     text-align: left;
+    line-height: 0.86;
   }
 
   .hero-content {
     align-self: flex-start;
     text-align: left;
+    margin-top: auto;
+    gap: 12px;
+    transform: translateY(0);
+  }
+
+  .hero-copy {
+    font-size: 0.95rem;
+    max-width: 34ch;
   }
 
   .cta {
-    padding: 14px 26px;
-    letter-spacing: 0.18em;
+    padding: 9px 18px;
+    letter-spacing: 0.14em;
+    font-size: 0.6rem;
   }
 
   .body {
-    padding: 0 20px 80px;
+    padding: 0 16px 72px;
   }
 
   .body-header h2 {
-    font-size: clamp(1.6rem, 8vw, 2.4rem);
+    font-size: clamp(1.5rem, 7.5vw, 2.2rem);
   }
 }
