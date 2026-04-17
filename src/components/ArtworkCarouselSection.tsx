@@ -9,6 +9,8 @@ type ArtworkCarouselSectionProps = {
   title: string
   eyebrow: string
   item: ArtworkItem | null
+  isAnimating?: boolean
+  direction?: 'forward' | 'backward'
   previousLabel: string
   nextLabel: string
   onPrevious: () => void
@@ -30,6 +32,8 @@ export default function ArtworkCarouselSection({
   title,
   eyebrow,
   item,
+  isAnimating = false,
+  direction = 'forward',
   previousLabel,
   nextLabel,
   onPrevious,
@@ -44,7 +48,15 @@ export default function ArtworkCarouselSection({
 }: ArtworkCarouselSectionProps) {
   const showcaseClassName = ['featured-showcase', reverseLayout ? 'featured-showcase-reverse' : ''].filter(Boolean).join(' ')
   const stageClasses = ['featured-stage', stageClassName].filter(Boolean).join(' ')
-  const cardClasses = ['featured-main-card', 'featured-editorial-card', cardClassName].filter(Boolean).join(' ')
+  const cardClasses = [
+    'featured-main-card',
+    'featured-editorial-card',
+    cardClassName,
+    isAnimating ? 'is-page-turning' : '',
+    direction === 'backward' ? 'is-page-turning-backward' : 'is-page-turning-forward',
+  ]
+    .filter(Boolean)
+    .join(' ')
   const frameClasses = ['featured-frame', 'featured-editorial-frame', frameClassName].filter(Boolean).join(' ')
 
   return (
@@ -121,7 +133,9 @@ export default function ArtworkCarouselSection({
                   <p className='featured-card-eyebrow'>{eyebrow}</p>
                   <h3>{emptyTitle}</h3>
                 </div>
-                <div className={['featured-frame', frameClassName, 'miniature-frame', 'miniature-placeholder'].filter(Boolean).join(' ')}>
+                <div
+                  className={['featured-frame', frameClassName, 'miniature-frame', 'miniature-placeholder'].filter(Boolean).join(' ')}
+                >
                   <div className='miniature-placeholder-inner'>{emptyMessage}</div>
                 </div>
               </article>

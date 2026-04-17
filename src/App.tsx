@@ -52,6 +52,8 @@ function App() {
         title="Selected Paintings"
         eyebrow="Featured Painting"
         item={currentWork}
+        isAnimating={featuredCarousel.isAnimating}
+        direction={featuredCarousel.direction}
         previousLabel="Show previous painting"
         nextLabel="Show next painting"
         onPrevious={featuredCarousel.showPrevious}
@@ -71,6 +73,8 @@ function App() {
         title="Charcoal Studies"
         eyebrow="Current Drawing"
         item={currentAbstractWork}
+        isAnimating={abstractCarousel.isAnimating}
+        direction={abstractCarousel.direction}
         previousLabel="Show previous abstract drawing"
         nextLabel="Show next abstract drawing"
         onPrevious={abstractCarousel.showPrevious}
@@ -94,6 +98,8 @@ function App() {
         title="Small Format Works"
         eyebrow="Miniature Feature"
         item={currentMiniatureWork}
+        isAnimating={miniatureCarousel.isAnimating}
+        direction={miniatureCarousel.direction}
         previousLabel="Show previous miniature painting"
         nextLabel="Show next miniature painting"
         onPrevious={miniatureCarousel.showPrevious}
@@ -117,6 +123,8 @@ function App() {
         title="Sketchbook Narratives"
         eyebrow="Sketchbook Highlight"
         item={currentSketchPadWork}
+        isAnimating={sketchPadCarousel.isAnimating}
+        direction={sketchPadCarousel.direction}
         previousLabel="Show previous sketch pad work"
         nextLabel="Show next sketch pad work"
         onPrevious={sketchPadCarousel.showPrevious}
