@@ -56,7 +56,7 @@ export default function ArtworkCarouselSection({
           </div>
         ) : null}
 
-        <ScrollReveal className='featured-header featured-section-header' as='div'>
+        <ScrollReveal className='featured-header featured-section-header' as='div' variant='fade-right'>
           <p className='featured-section-index'>{index}</p>
           <div className='featured-section-heading'>
             <p className='featured-kicker'>{kicker}</p>
@@ -64,7 +64,12 @@ export default function ArtworkCarouselSection({
           </div>
         </ScrollReveal>
 
-        <ScrollReveal className={showcaseClassName} as='div' delay={120}>
+        <ScrollReveal
+          className={showcaseClassName}
+          as='div'
+          delay={120}
+          variant={reverseLayout ? 'fade-left' : 'soft-zoom'}
+        >
           <div className={stageClasses}>
             {item ? (
               <>

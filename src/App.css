@@ -6,17 +6,35 @@
 }
 
 .scroll-reveal {
+  --reveal-duration: 1100ms;
+  --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-transform: translate3d(0, 52px, 0) scale(0.96) rotate(-0.6deg);
   opacity: 0;
-  transform: translateY(40px);
+  transform: var(--reveal-transform);
+  filter: blur(8px) saturate(0.86);
   transition:
-    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
+    opacity var(--reveal-duration) var(--reveal-ease),
+    transform var(--reveal-duration) var(--reveal-ease),
+    filter calc(var(--reveal-duration) * 0.9) ease;
+  will-change: opacity, transform, filter;
+}
+
+.scroll-reveal[data-reveal-variant='fade-right'] {
+  --reveal-transform: translate3d(-56px, 18px, 0) scale(0.97) rotate(-1.2deg);
+}
+
+.scroll-reveal[data-reveal-variant='fade-left'] {
+  --reveal-transform: translate3d(56px, 18px, 0) scale(0.97) rotate(1.2deg);
+}
+
+.scroll-reveal[data-reveal-variant='soft-zoom'] {
+  --reveal-transform: translate3d(0, 30px, 0) scale(0.9);
 }
 
 .scroll-reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0) scale(1) rotate(0);
+  filter: blur(0) saturate(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -24,6 +42,7 @@
   .scroll-reveal.is-visible {
     opacity: 1;
     transform: none;
+    filter: none;
     transition: none;
   }
 }

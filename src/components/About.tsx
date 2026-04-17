@@ -7,7 +7,7 @@ type AboutProps = {
 export default function About({ emailLink }: AboutProps) {
   return (
     <section className='about' id='about'>
-      <ScrollReveal className='about-intro' as='div'>
+      <ScrollReveal className='about-intro' as='div' variant='fade-right'>
         <p className='about-label'>About</p>
         <h2 className='about-title'>Rooted in Afrocentrism, spirituality and feminine presence.</h2>
         <p className='about-lead'>
@@ -18,7 +18,7 @@ export default function About({ emailLink }: AboutProps) {
       </ScrollReveal>
 
       <div className='about-grid'>
-        <ScrollReveal className='about-card about-card-statement' as='article'>
+        <ScrollReveal className='about-card about-card-statement' as='article' variant='fade-up'>
           <p className='about-card-label'>Practice</p>
           <p className='about-card-copy'>
             I create work that reconciles the human and the supernatural while remaining attentive to the ordinary,
@@ -26,7 +26,7 @@ export default function About({ emailLink }: AboutProps) {
           </p>
         </ScrollReveal>
 
-        <ScrollReveal className='about-card about-card-influence' as='article' delay={120}>
+        <ScrollReveal className='about-card about-card-influence' as='article' delay={120} variant='soft-zoom'>
           <p className='about-card-label'>Influence</p>
           <ul className='about-list'>
             <li>The Uli metaphor from South-eastern Nigeria</li>
@@ -36,7 +36,7 @@ export default function About({ emailLink }: AboutProps) {
           </ul>
         </ScrollReveal>
 
-        <ScrollReveal className='about-card about-card-location' as='article' delay={220}>
+        <ScrollReveal className='about-card about-card-location' as='article' delay={220} variant='fade-left'>
           <p className='about-card-label'>Based in</p>
           <p className='about-card-copy'>Nigeria — available for exhibitions, performances and collaborations.</p>
           <a className='about-link' href={emailLink}>

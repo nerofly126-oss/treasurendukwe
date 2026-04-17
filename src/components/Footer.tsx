@@ -34,14 +34,14 @@ export default function Footer({
       <div className='footer-overlay' aria-hidden='true'></div>
 
       <div className='footer-inner'>
-        <ScrollReveal className='footer-topbar' as='div'>
+        <ScrollReveal className='footer-topbar' as='div' variant='fade-right'>
           <h2 className='footer-title'>Let&rsquo;s Talk</h2>
           <a className='footer-contact-link' href={whatsappLink} target='_blank' rel='noopener noreferrer'>
             → Contact
           </a>
         </ScrollReveal>
 
-        <ScrollReveal className='footer-collage' as='div' aria-hidden='true' delay={80}>
+        <ScrollReveal className='footer-collage' as='div' aria-hidden='true' delay={80} variant='soft-zoom'>
           <figure className='footer-polaroid footer-polaroid-left'>
             <img
               src={featuredThumbWork.thumb.src}
@@ -74,7 +74,7 @@ export default function Footer({
           </figure>
         </ScrollReveal>
 
-        <ScrollReveal className='footer-message' as='div' delay={140}>
+        <ScrollReveal className='footer-message' as='div' delay={140} variant='fade-up'>
           <p className='footer-lead'>I keep things simple, creative and meaningful.</p>
           <p className='footer-subcopy'>
             Send me a message on{' '}
@@ -84,7 +84,7 @@ export default function Footer({
           </p>
         </ScrollReveal>
 
-        <ScrollReveal className='footer-meta-grid' as='div' delay={200}>
+        <ScrollReveal className='footer-meta-grid' as='div' delay={200} variant='fade-left'>
           <div className='footer-signature'>
             <p className='footer-name'>Treasure Artchi.</p>
             <p className='footer-description'>
