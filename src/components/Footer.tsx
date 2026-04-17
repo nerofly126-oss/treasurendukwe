@@ -1,3 +1,4 @@
+import ScrollReveal from './ScrollReveal'
 import type { ArtworkItem, FeaturedArtworkItem } from '../types/artwork'
 
 type FooterProps = {
@@ -33,14 +34,14 @@ export default function Footer({
       <div className='footer-overlay' aria-hidden='true'></div>
 
       <div className='footer-inner'>
-        <div className='footer-topbar'>
+        <ScrollReveal className='footer-topbar' as='div'>
           <h2 className='footer-title'>Let&rsquo;s Talk</h2>
           <a className='footer-contact-link' href={whatsappLink} target='_blank' rel='noopener noreferrer'>
             → Contact
           </a>
-        </div>
+        </ScrollReveal>
 
-        <div className='footer-collage' aria-hidden='true'>
+        <ScrollReveal className='footer-collage' as='div' aria-hidden='true' delay={80}>
           <figure className='footer-polaroid footer-polaroid-left'>
             <img
               src={featuredThumbWork.thumb.src}
@@ -71,9 +72,9 @@ export default function Footer({
               decoding='async'
             />
           </figure>
-        </div>
+        </ScrollReveal>
 
-        <div className='footer-message'>
+        <ScrollReveal className='footer-message' as='div' delay={140}>
           <p className='footer-lead'>I keep things simple, creative and meaningful.</p>
           <p className='footer-subcopy'>
             Send me a message on{' '}
@@ -81,9 +82,9 @@ export default function Footer({
               WhatsApp
             </a>
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className='footer-meta-grid'>
+        <ScrollReveal className='footer-meta-grid' as='div' delay={200}>
           <div className='footer-signature'>
             <p className='footer-name'>Treasure Artchi.</p>
             <p className='footer-description'>
@@ -143,7 +144,7 @@ export default function Footer({
               </svg>
             </a>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
 
       <div className='footer-bottom'>

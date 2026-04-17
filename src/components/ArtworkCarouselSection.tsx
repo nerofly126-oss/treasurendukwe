@@ -1,3 +1,4 @@
+import ScrollReveal from './ScrollReveal'
 import type { ArtworkItem } from '../types/artwork'
 
 type ArtworkCarouselSectionProps = {
@@ -55,15 +56,15 @@ export default function ArtworkCarouselSection({
           </div>
         ) : null}
 
-        <div className='featured-header featured-section-header'>
+        <ScrollReveal className='featured-header featured-section-header' as='div'>
           <p className='featured-section-index'>{index}</p>
           <div className='featured-section-heading'>
             <p className='featured-kicker'>{kicker}</p>
             <h2>{title}</h2>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div className={showcaseClassName}>
+        <ScrollReveal className={showcaseClassName} as='div' delay={120}>
           <div className={stageClasses}>
             {item ? (
               <>
@@ -121,7 +122,7 @@ export default function ArtworkCarouselSection({
               </article>
             )}
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )

@@ -5,6 +5,29 @@
   gap: 0;
 }
 
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .zigzag-divider {
   height: 96px;
   width: 100%;
@@ -208,9 +231,6 @@
   display: grid;
   gap: 14px;
   max-width: 860px;
-  animation: aboutReveal 0.9s ease both;
-  animation-timeline: view();
-  animation-range: entry 15% cover 32%;
 }
 
 .about-label,
@@ -260,17 +280,6 @@
   background: rgba(255, 252, 247, 0.86);
   border: 1px solid rgba(17, 17, 17, 0.08);
   box-shadow: 0 14px 30px rgba(31, 26, 22, 0.08);
-  animation: aboutReveal 0.9s ease both;
-  animation-timeline: view();
-  animation-range: entry 18% cover 30%;
-}
-
-.about-card:nth-child(2) {
-  animation-delay: 0.08s;
-}
-
-.about-card:nth-child(3) {
-  animation-delay: 0.16s;
 }
 
 .about-card-statement {
@@ -891,11 +900,14 @@
 
 @media (max-width: 900px) {
   .hero {
+    min-height: 100vh;
+    min-height: 100svh;
     padding: 12px;
   }
 
   .hero-panel {
-    min-height: auto;
+    min-height: calc(100vh - 24px);
+    min-height: calc(100svh - 24px);
     grid-template-columns: 1fr;
   }
 
@@ -959,7 +971,14 @@
 
 @media (max-width: 600px) {
   .hero {
+    min-height: 100vh;
+    min-height: 100svh;
     padding: 8px;
+  }
+
+  .hero-panel {
+    min-height: calc(100vh - 16px);
+    min-height: calc(100svh - 16px);
   }
 
   .hero-copy-panel {
