@@ -624,6 +624,8 @@
   transform-origin: left center;
   transform-style: preserve-3d;
   backface-visibility: hidden;
+  will-change: transform, opacity;
+  contain: layout paint;
   animation: featuredCardReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -637,23 +639,25 @@
 }
 
 .featured-main-card::before {
-  background: linear-gradient(90deg, rgba(32, 24, 18, 0.3), transparent 16%, transparent 84%, rgba(32, 24, 18, 0.16));
+  background: linear-gradient(90deg, rgba(32, 24, 18, 0.18), transparent 18%, transparent 84%, rgba(32, 24, 18, 0.1));
   mix-blend-mode: multiply;
+  transition: opacity 220ms ease;
 }
 
 .featured-main-card::after {
   inset: 12px 0 12px auto;
-  width: 18px;
+  width: 14px;
   border-radius: 0 12px 12px 0;
-  background: linear-gradient(180deg, rgba(255, 250, 242, 0.8), rgba(214, 196, 170, 0.92));
+  background: linear-gradient(180deg, rgba(255, 250, 242, 0.72), rgba(214, 196, 170, 0.84));
   box-shadow:
-    -4px 0 10px rgba(64, 44, 30, 0.14),
-    -1px 0 0 rgba(92, 68, 44, 0.24);
+    -3px 0 8px rgba(64, 44, 30, 0.08),
+    -1px 0 0 rgba(92, 68, 44, 0.16);
+  transition: opacity 220ms ease;
 }
 
 .featured-main-card.is-page-turning {
-  animation-duration: 900ms;
-  animation-timing-function: cubic-bezier(0.22, 0.8, 0.2, 1);
+  animation-duration: 720ms;
+  animation-timing-function: cubic-bezier(0.2, 0.72, 0.2, 1);
 }
 
 .featured-main-card.is-page-turning::before,
@@ -961,53 +965,45 @@
 
 @keyframes bookPageFlipForward {
   0% {
-    opacity: 0.7;
-    transform: rotateY(0deg) scale(1);
-    filter: brightness(1);
+    opacity: 0.88;
+    transform: rotateY(0deg) translate3d(0, 0, 0) scale(1);
   }
 
-  35% {
-    opacity: 0.92;
-    transform: rotateY(-22deg) translateX(-8px) scale(0.99);
-    filter: brightness(1.04);
+  30% {
+    opacity: 0.94;
+    transform: rotateY(-12deg) translate3d(-4px, 0, 0) scale(0.995);
   }
 
-  60% {
+  68% {
     opacity: 1;
-    transform: rotateY(14deg) translateX(6px) scale(1.01);
-    filter: brightness(0.98);
+    transform: rotateY(5deg) translate3d(2px, 0, 0) scale(1.002);
   }
 
   100% {
     opacity: 1;
-    transform: rotateY(0deg) translateX(0) scale(1);
-    filter: brightness(1);
+    transform: rotateY(0deg) translate3d(0, 0, 0) scale(1);
   }
 }
 
 @keyframes bookPageFlipBackward {
   0% {
-    opacity: 0.7;
-    transform: rotateY(0deg) scale(1);
-    filter: brightness(1);
+    opacity: 0.88;
+    transform: rotateY(0deg) translate3d(0, 0, 0) scale(1);
   }
 
-  35% {
-    opacity: 0.92;
-    transform: rotateY(22deg) translateX(8px) scale(0.99);
-    filter: brightness(1.04);
+  30% {
+    opacity: 0.94;
+    transform: rotateY(12deg) translate3d(4px, 0, 0) scale(0.995);
   }
 
-  60% {
+  68% {
     opacity: 1;
-    transform: rotateY(-14deg) translateX(-6px) scale(1.01);
-    filter: brightness(0.98);
+    transform: rotateY(-5deg) translate3d(-2px, 0, 0) scale(1.002);
   }
 
   100% {
     opacity: 1;
-    transform: rotateY(0deg) translateX(0) scale(1);
-    filter: brightness(1);
+    transform: rotateY(0deg) translate3d(0, 0, 0) scale(1);
   }
 }
 
