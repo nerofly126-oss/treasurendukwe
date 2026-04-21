@@ -8,6 +8,7 @@ type FooterProps = {
   footerBackgroundWork: FeaturedArtworkItem
   whatsappLink: string
   emailLink: string
+  certificatesHref: string
 }
 
 export default function Footer({
@@ -17,6 +18,7 @@ export default function Footer({
   footerBackgroundWork,
   whatsappLink,
   emailLink,
+  certificatesHref,
 }: FooterProps) {
   return (
     <footer className='footer'>
@@ -103,6 +105,9 @@ export default function Footer({
                 <a href='#about'>About</a>
               </li>
               <li>
+                <a href='#performances'>Performances</a>
+              </li>
+              <li>
                 <a href='#abstract-drawings'>Abstract Drawings</a>
               </li>
               <li>
@@ -110,6 +115,9 @@ export default function Footer({
               </li>
               <li>
                 <a href='#sketch-pads'>Sketch Pads</a>
+              </li>
+              <li>
+                <a href={certificatesHref}>Certificates</a>
               </li>
             </ul>
           </nav>

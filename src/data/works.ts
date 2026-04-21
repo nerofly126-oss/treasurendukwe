@@ -136,6 +136,146 @@ export const featuredWorks: FeaturedArtworkItem[] = [
   },
 ]
 
+export const performancesWorks: ArtworkItem[] = [
+  {
+    title: 'Kingdom Eminence Creative Hangout',
+    category: 'Performance',
+    year: '2026',
+    medium: 'Spontaneous Poetry',
+    dimensions: 'Lagos',
+    description:
+      'Spontaneous poetry at Kingdom Eminence Creative Hangout, Lagos.',
+    image: getImageAsset(
+      'performance-kingdom-eminence',
+      undefined,
+      'Kingdom Eminence Creative Hangout',
+    ),
+  },
+  {
+    title: 'Of Earth and Spirit Exhibition',
+    category: 'Performance',
+    year: '2026',
+    medium: 'Spoken Word',
+    dimensions: 'Odama Gallery, Lagos',
+    description:
+      'Spoken word at "Of Earth and Spirit" Exhibition, Odama Gallery, Lagos.',
+    image: getImageAsset(
+      'performance-odama-gallery',
+      undefined,
+      'Of Earth and Spirit Exhibition',
+    ),
+  },
+  {
+    title: 'ICRW Africa',
+    category: 'Performance',
+    year: '2026',
+    medium: 'Narrative Poetry and Visual Art Fusion',
+    dimensions: 'ICRW Africa',
+    description:
+      'Narrative poetry and visual art fusion for ICRW Africa.',
+    image: getImageAsset(
+      'performance-icrw-africa',
+      undefined,
+      'Narrative poetry and visual art fusion for ICRW Africa',
+    ),
+  },
+  {
+    title: 'Worship Room',
+    category: 'Performance',
+    year: '2025',
+    medium: 'Group Music Ministration',
+    dimensions: 'Worship Room',
+    description:
+      'Group music ministration at Worship Room.',
+    image: getImageAsset(
+      'performance-worship-room',
+      undefined,
+      'Group music ministration at Worship Room',
+    ),
+  },
+  {
+    title: 'Earth Girlie',
+    category: 'Performance',
+    year: '2025',
+    medium: 'Solo Aesthetic Display',
+    dimensions: 'Independent Showcase',
+    description: 'Solo aesthetic display.',
+    image: getImageAsset(
+      'performance-earth-girlie',
+      undefined,
+      'Solo aesthetic display',
+    ),
+  },
+  {
+    title: 'In-house Duet with Gabby Jason',
+    category: 'Performance',
+    year: '2023',
+    medium: 'Duet Performance',
+    dimensions: 'In-house Session',
+    description: 'In-house duet performance with Gabby Jason.',
+    image: getImageAsset(
+      'performance-marts-duet',
+      undefined,
+      'In-house duet performance with Gabby Jason',
+    ),
+  },
+  {
+    title: 'Arts Theatre Grand Finale',
+    category: 'Performance',
+    year: '2023',
+    medium: 'Music and Theatrical Performance',
+    dimensions: 'Arts Theatre, University of Nigeria',
+    description:
+      'Music and theatrical performance at Arts Theatre, University of Nigeria.',
+    image: getImageAsset(
+      'performance-arts-theatre-grand-finale',
+      undefined,
+      'Music and theatrical performance at Arts Theatre, University of Nigeria',
+    ),
+  },
+  {
+    title: 'Arts Theatre Finals',
+    category: 'Performance',
+    year: '2023',
+    medium: 'Music and Theatrical Performance',
+    dimensions: 'Arts Theatre, University of Nigeria',
+    description:
+      'Music and theatrical performance at the Arts Theatre, University of Nigeria.',
+    image: getImageAsset(
+      'performance-arts-theatre-finals',
+      undefined,
+      'Music and theatrical performance at the Arts Theatre, University of Nigeria',
+    ),
+  },
+  {
+    title: 'Theatre Arts Pavilion',
+    category: 'Performance',
+    year: '2023',
+    medium: 'Acting Role',
+    dimensions: 'Theatre Arts Pavilion, University of Nigeria',
+    description:
+      'Acting role at Theatre Arts Pavilion, University of Nigeria.',
+    image: getImageAsset(
+      'performance-theatre-pavilion',
+      undefined,
+      'Acting role at Theatre Arts Pavilion, University of Nigeria',
+    ),
+  },
+  {
+    title: 'AFAAS Award & Dinner Night',
+    category: 'Performance',
+    year: '2022',
+    medium: 'Musical Performance',
+    dimensions: 'AFAAS Award & Dinner Night',
+    description: 'Musical performance at AFAAS Award & Dinner Night.',
+    image: getImageAsset(
+      'performance-afaas-dinner-night',
+      undefined,
+      'Musical performance at AFAAS Award & Dinner Night',
+    ),
+  },
+]
+
 export const abstractWorks: ArtworkItem[] = [
   {
     title: 'A tale of Self Protection',
